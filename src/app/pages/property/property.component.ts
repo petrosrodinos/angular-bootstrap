@@ -1,9 +1,9 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CreatePropertyComponent } from '../../components/create-property/create-property.component';
 import { PropertyService } from '../../services/property/property.service';
 import { SpinnerComponent } from '../../components/ui/spinner/spinner.component';
 import { Property } from '../../models/property.model';
+import { CreatePropertyComponent } from '../../components/create-property/create-property.component';
 
 @Component({
   selector: 'app-property',
