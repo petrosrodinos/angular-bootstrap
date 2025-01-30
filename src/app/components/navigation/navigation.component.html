@@ -1,0 +1,109 @@
+<nav
+  class="pl-3 pr-3 fixed-top navbar navbar-expand-lg bg-light justify-content-between"
+>
+  <img
+    src="https://tourmie.com/wp-content/uploads/thegem-logos/logo_342cc02d428d7796974cf1aad247c1a2_1x.png"
+    alt="tourmie"
+    width="100"
+    height="30"
+  />
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <!-- <li class="nav-item active">
+        <a class="nav-link" href="#"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li> -->
+    </ul>
+    <form class="form-inline my-2 my-lg-0 d-flex align-items-center">
+      <div class="input-group me-3" style="width: 440px">
+        <span class="input-group-text" id="basic-addon1">
+          <i class="fa-solid fa-magnifying-glass" style="color: cyan"></i>
+        </span>
+        <input
+          type="search"
+          class="form-control"
+          placeholder="Search for guests, properties, partnerships..."
+          aria-label="Search"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+
+      <div class="btn-group me-3">
+        <button
+          type="button"
+          class="btn btn-success dropdown-toggle"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Add new
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Action</a>
+        </div>
+      </div>
+
+      <button class="btn btn-light border">
+        <i class="fa-regular fa-bell"></i>
+      </button>
+
+      <img
+        src="https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg"
+        alt=""
+        width="40"
+        height="40"
+        class="ml-3"
+      />
+    </form>
+  </div>
+</nav>
+<div style="padding-top: 50px" class="container-fluid px-0">
+  <div class="row vh-100 collapse show g-0 d-flex">
+    <div
+      class="ml-3 col-3 p-0 h-100 text-white w-sidebar navbar-collapse collapse d-none d-md-flex sidebar"
+    >
+      <div class="position-fixed h-100 w-sidebar">
+        <app-account-info />
+        <ul class="nav flex-column">
+          <li class="nav-item" *ngFor="let item of sideNavItems">
+            <a
+              class="nav-link d-flex align-items-center text-black"
+              [routerLink]="item.url"
+              routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <span
+                class="p-1 d-flex justify-content-center align-items-center rounded-circle border bg-transparent"
+                routerLinkActive="bg-primary"
+                [routerLinkActiveOptions]="{ exact: true }"
+              >
+                <i [class]="item.icon"></i>
+              </span>
+              <span class="ms-2 text-black">{{ item.name }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col pl-5 pr-5 pt-4 content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

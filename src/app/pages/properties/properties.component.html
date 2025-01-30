@@ -1,0 +1,39 @@
+<div class="properties-container">
+  <div class="mb-3 d-flex justify-content-between">
+    <h3>Properties</h3>
+    <div class="gap-2 d-flex">
+      <button [routerLink]="['/properties/new']" class="btn btn-primary">
+        Add property
+      </button>
+      <button class="btn btn-danger d-flex align-items-center">
+        <i class="fa-brands fa-airbnb p-1"></i>
+        Import from Airbnb
+      </button>
+      <button
+        (click)="toggleView('grid')"
+        class="btn view-toggle-btn"
+        [ngClass]="{ 'selected-view': viewMode === 'grid' }"
+      >
+        <i class="fas fa-th-large"></i>
+      </button>
+      <button
+        (click)="toggleView('table')"
+        class="btn view-toggle-btn"
+        [ngClass]="{ 'selected-view': viewMode === 'table' }"
+      >
+        <i class="fas fa-list"></i>
+      </button>
+    </div>
+  </div>
+
+  <app-spinner [loading]="loading()"></app-spinner>
+  <app-grid-view
+    *ngIf="viewMode === 'grid'"
+    [properties]="properties()"
+  ></app-grid-view>
+
+  <app-table-view
+    *ngIf="viewMode === 'table'"
+    [properties]="properties()"
+  ></app-table-view>
+</div>

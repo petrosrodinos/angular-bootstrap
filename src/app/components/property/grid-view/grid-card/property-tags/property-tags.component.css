@@ -1,0 +1,9 @@
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+}
+
+.badge {
+  font-size: 0.85rem;
+}

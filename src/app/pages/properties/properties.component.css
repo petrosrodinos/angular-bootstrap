@@ -1,0 +1,26 @@
+.properties-container {
+  padding-bottom: 10px;
+}
+
+.view-toggle-btn {
+  background: transparent;
+  border: none;
+  color: gray;
+  padding: 6px 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.view-toggle-btn i {
+  font-size: 18px;
+  color: gray;
+}
+
+.view-toggle-btn.selected-view {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 255, 0.2);
+}
+
+.view-toggle-btn.selected-view i {
+  color: cyan;
+}

@@ -1,0 +1,5 @@
+<div class="grid-view-container row row-cols-1 row-cols-md-3 g-4">
+  <div *ngFor="let property of properties" class="col">
+    <app-grid-card [property]="property"></app-grid-card>
+  </div>
+</div>
