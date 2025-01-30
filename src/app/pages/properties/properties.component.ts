@@ -27,7 +27,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 export class PropertiesComponent implements OnInit {
   properties = signal<Property[]>([]);
   loading = signal<boolean>(true);
-  viewMode: CardViewType = 'table';
+  viewMode: CardViewType = 'grid';
 
   constructor(private propertyService: PropertyService) {}
 

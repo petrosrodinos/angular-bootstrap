@@ -20,7 +20,7 @@ export class NavigationComponent {
   constructor() {}
 
   sideNavItems = [
-    { name: 'Dashboard', url: '/properties/new', icon: 'fa-solid fa-gauge' },
+    { name: 'Dashboard', url: '#', icon: 'fa-solid fa-gauge' },
     { name: 'Bookings', url: '#', icon: 'fa-regular fa-calendar' },
     { name: 'Guests', url: '#', icon: 'fa-regular fa-user' },
     { name: 'Performance', url: '#', icon: 'fa-solid fa-chart-simple' },

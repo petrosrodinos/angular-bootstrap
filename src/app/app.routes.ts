@@ -18,7 +18,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'property/:id',
+    path: 'properties/:id',
     loadComponent: () =>
       import('./pages/property/property.component').then(
         (m) => m.PropertyComponent
