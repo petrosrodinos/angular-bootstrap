@@ -1,7 +1,9 @@
 <div [routerLink]="['/property', property.id]" class="card">
   <div class="position-relative">
     <img [src]="property.image" class="card-img-top" alt="Property image" />
-    <app-percentage-box></app-percentage-box>
+    <div class="position-absolute top-0 start-0">
+      <app-percentage-box></app-percentage-box>
+    </div>
     <app-property-tags
       [tags]="['Entire place', 'Apartment']"
     ></app-property-tags>

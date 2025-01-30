@@ -1,34 +1,49 @@
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Image</th>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Country</th>
-        <th scope="col">State</th>
-        <th scope="col">City</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        [routerLink]="['/property', property.id]"
-        *ngFor="let property of properties"
-        class="table-item"
-      >
-        <td>
-          <img
-            [src]="property.image"
-            alt="property image"
-            class="table-image"
-          />
-        </td>
-        <td>{{ property.name }}</td>
-        <td>{{ property.description }}</td>
-        <td>{{ property.country }}</td>
-        <td>{{ property.state }}</td>
-        <td>{{ property.city }}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="card p-3">
+  <div class="card-body">
+    <div class="d-flex justify-content-end mb-3">
+      <div class="input-group me-3" style="width: 200px">
+        <span class="input-group-text" id="basic-addon1">
+          <i class="fa-solid fa-magnifying-glass" style="color: cyan"></i>
+        </span>
+        <input
+          type="search"
+          class="form-control"
+          placeholder="Search..."
+          aria-label="Search"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Property title</th>
+            <th scope="col">Category</th>
+            <th scope="col">Type</th>
+            <th scope="col">Bookings</th>
+            <th scope="col">Guest guide views</th>
+            <th scope="col">Guest experience</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            [routerLink]="['/property', property.id]"
+            *ngFor="let property of properties"
+            class="table-item"
+          >
+            <td style="color: #009999">{{ property.name }}</td>
+            <td>Entire place</td>
+            <td>Apartment</td>
+            <td>18</td>
+            <td>2389</td>
+            <td style="width: 20px">
+              <app-percentage-box></app-percentage-box>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
