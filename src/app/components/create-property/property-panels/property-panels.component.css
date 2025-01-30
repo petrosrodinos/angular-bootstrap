@@ -1,0 +1,8 @@
+.bg-grey {
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+li {
+  cursor: pointer;
+}

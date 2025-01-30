@@ -1,1 +1,12 @@
-<p>property-panels works!</p>
+<ul class="list-unstyled" style="max-width: 200px">
+  <li
+    *ngFor="let panel of panels"
+    [id]="panel.id"
+    class="text-black p-2"
+    (click)="selectPanel(panel.id)"
+    [ngClass]="{ 'bg-grey': selectedPanelId === panel.id }"
+    style="cursor: pointer"
+  >
+    {{ panel.name }}
+  </li>
+</ul>

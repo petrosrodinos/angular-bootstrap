@@ -1,5 +1,21 @@
-<button class="btn btn-success rounded-circle p-2">
+<button routerLink="/properties" class="btn btn-success rounded-circle p-2">
   <i class="fa fa-arrow-left"></i>
 </button>
 
-<app-property-forms [property]="property()" />
+<b class="ms-2">
+  {{ property() ? property()?.name : "Create Property" }}
+</b>
+
+<div class="row g-3 mt-2">
+  <div class="col-md-2">
+    <app-property-panels></app-property-panels>
+  </div>
+
+  <div class="col-md-6">
+    <app-property-forms [property]="property()"></app-property-forms>
+  </div>
+
+  <div class="col-md-4">
+    <app-property-preview [property]="property()"></app-property-preview>
+  </div>
+</div>

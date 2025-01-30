@@ -1,1 +1,7 @@
-<p>property-preview works!</p>
+<div *ngIf="property" class="card" style="width: 18rem">
+  <img [src]="property()!.image" class="card-img-top" alt="Property image" />
+  <div class="card-body">
+    <h5 class="card-title">{{ property()!.name }}</h5>
+    <p class="card-text">{{ property()!.description }}</p>
+  </div>
+</div>
