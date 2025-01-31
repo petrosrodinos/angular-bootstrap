@@ -2,6 +2,10 @@
   background-color: #f2f2f2;
 }
 
+.navbar-container {
+  border-bottom: 1px solid lightgrey;
+}
+
 .w-sidebar {
   background-color: #f2f2f2;
   /* border-right: 1px solid grey; */
