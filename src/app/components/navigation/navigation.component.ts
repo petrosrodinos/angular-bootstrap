@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import { AccountInfoComponent } from './account-info/account-info.component';
-
+import { NavbarContentComponent } from './navbar-content/navbar-content.component';
 @Component({
   selector: 'app-navigation',
   imports: [
@@ -12,6 +12,7 @@ import { AccountInfoComponent } from './account-info/account-info.component';
     RouterOutlet,
     RouterModule,
     AccountInfoComponent,
+    NavbarContentComponent,
   ],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.css',
