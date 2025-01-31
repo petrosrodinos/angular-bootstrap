@@ -10,6 +10,7 @@ import { PropertyService } from '../../../services/property/property.service';
 import { catchError, tap, throwError } from 'rxjs';
 import { Property } from '../../../models/property.model';
 import { SpinnerComponent } from '../../ui/spinner/spinner.component';
+import { PropertyStoreService } from '../../../stores/property-store/property-store.service';
 
 @Component({
   selector: 'app-property-forms',
@@ -22,7 +23,10 @@ export class PropertyFormsComponent {
   property = input<Property | null>(null);
   loading = false;
 
-  constructor(private propertyService: PropertyService) {
+  constructor(
+    private propertyService: PropertyService,
+    private propertyStore: PropertyStoreService
+  ) {
     this.propertyForm = new FormGroup({
       name: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
@@ -34,15 +38,16 @@ export class PropertyFormsComponent {
 
     effect(() => {
       if (this.property()) {
-        this.propertyForm.patchValue({
-          name: this.property()!.name,
-          description: this.property()!.description,
-          image: this.property()!.image,
-          city: this.property()!.city,
-          state: this.property()!.state,
-          country: this.property()!.country,
-        });
+        this.propertyForm.patchValue(this.property()!);
+        this.propertyStore.updateProperty(this.property()!);
+      } else {
+        this.propertyForm.reset();
+        this.propertyStore.resetProperty();
       }
+    });
+
+    this.propertyForm.valueChanges.subscribe((value) => {
+      this.propertyStore.updateProperty(value);
     });
   }
 

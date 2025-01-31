@@ -1,7 +1,19 @@
-<div *ngIf="property" class="card" style="width: 18rem">
-  <img [src]="property()!.image" class="card-img-top" alt="Property image" />
-  <div class="card-body">
-    <h5 class="card-title">{{ property()!.name }}</h5>
-    <p class="card-text">{{ property()!.description }}</p>
-  </div>
+<div class="card p-3">
+  <h3>Property Preview</h3>
+  <img
+    *ngIf="(property$ | async)?.image"
+    [src]="(property$ | async)?.image"
+    class="img-fluid rounded"
+    alt="Property Image"
+  />
+  <p><strong>Name:</strong> {{ (property$ | async)?.name || "N/A" }}</p>
+  <p>
+    <strong>Description:</strong>
+    {{ (property$ | async)?.description || "N/A" }}
+  </p>
+  <p>
+    <strong>Location:</strong> {{ (property$ | async)?.city || "N/A" }},
+    {{ (property$ | async)?.state || "N/A" }},
+    {{ (property$ | async)?.country || "N/A" }}
+  </p>
 </div>
