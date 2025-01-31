@@ -27,13 +27,15 @@
   </div>
 
   <app-spinner [loading]="loading()"></app-spinner>
-  <app-grid-view
-    *ngIf="viewMode === 'grid'"
-    [properties]="properties()"
-  ></app-grid-view>
+  <div *ngIf="!loading()">
+    <app-grid-view
+      *ngIf="viewMode === 'grid'"
+      [properties]="properties()"
+    ></app-grid-view>
 
-  <app-table-view
-    *ngIf="viewMode === 'table'"
-    [properties]="properties()"
-  ></app-table-view>
+    <app-table-view
+      *ngIf="viewMode === 'table'"
+      [properties]="properties()"
+    ></app-table-view>
+  </div>
 </div>
