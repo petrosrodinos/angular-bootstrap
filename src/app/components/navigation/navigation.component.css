@@ -1,3 +1,7 @@
+body {
+  padding-top: 55px;
+}
+
 .content-container {
   background-color: #f2f2f2;
 }
@@ -7,14 +11,13 @@
 }
 
 .w-sidebar {
+  width: 270px;
+  max-width: 270px;
   background-color: #f2f2f2;
-  /* border-right: 1px solid grey; */
-  width: 250px;
-  max-width: 250px;
 }
 
 .row.collapse {
-  margin-left: -200px;
+  margin-left: -270px;
   left: 0;
   transition: margin-left 0.15s linear;
 }
@@ -24,7 +27,7 @@
 }
 
 .row.collapsing {
-  margin-left: -200px;
+  margin-left: -270px;
   left: -0.05%;
   transition: all 0.15s linear;
 }
